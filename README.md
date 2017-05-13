@@ -1,3 +1,3 @@
 # UnityBlending
 
-![alt tag](https://github.com/ted10401/UnityBlending/blob/master/GitHubResources/unity_blending.png)
+![alt tag](https://github.com/ted10401/UnityBlending/blob/master/GithubResources/unity_blending.png)
