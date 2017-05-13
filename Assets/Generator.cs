@@ -5,14 +5,19 @@ using System;
 
 public class Generator : MonoBehaviour
 {
+    [SerializeField] private RawImage m_imageDestination;
+    [SerializeField] private RawImage m_imageSource;
     [SerializeField] private GameObject m_reference;
-    [SerializeField] private Texture m_imageDestination;
-    [SerializeField] private Texture m_imageSource;
+    [SerializeField] private Texture m_textureDestination;
+    [SerializeField] private Texture m_textureSource;
     [SerializeField] private GameObject m_textDestinationReference;
     [SerializeField] private GameObject m_textSourceReference;
 
     private void Awake()
     {
+        m_imageDestination.texture = m_textureDestination;
+        m_imageSource.texture = m_textureSource;
+
         DeleteChilds();
         CreateChilds();
     }
@@ -110,17 +115,10 @@ public class Generator : MonoBehaviour
                 cache.transform.localScale = Vector3.one;
                 cache.transform.localPosition = new Vector3((x - middle) * 100, (y - middle) * -100, 0);
 
-//                materialCache = new Material(Shader.Find("Unlit/Blend"));
-//                materialCache.SetInt("_BlendSrcFactor", x);
-//                materialCache.SetInt("_BlendDstFactor", y);
-//                materialCache.SetTexture("_MainTex", m_imageDestination);
-//
-//                cache.GetComponent<Image>().material = materialCache;
-
                 materialCache = new Material(Shader.Find("Unlit/Blend"));
                 materialCache.SetInt("_BlendSrcFactor", x);
                 materialCache.SetInt("_BlendDstFactor", y);
-                materialCache.SetTexture("_MainTex", m_imageSource);
+                materialCache.SetTexture("_MainTex", m_textureSource);
 
                 cache.transform.GetChild(0).GetComponent<Image>().material = materialCache;
             }
