@@ -20,3 +20,5 @@
 ![alt tag](https://github.com/ted10401/UnityBlending/blob/master/GithubResources/unity_blending_step_3.png)
 
 4. Play
+
+![alt tag](https://github.com/ted10401/UnityBlending/blob/master/GithubResources/unity_blending_step_4.png)
